@@ -14,14 +14,13 @@ from pprint import pprint
 creds = { 'username': 'YOUR_USERNAME_HERE', 'password': 'YOUR_PASSWORD_HERE' }
 
 # comment this line out to disable use of a tmpfile (it's mostly just for testing)
-tmpfile = '/tmp/loyal3_index.tmp'
+# tmpfile = '/tmp/loyal3_index.tmp'
 
 # Enable debugging. default is False.
 # debug = True
 
 def login(br,cj,link,creds):
     c = br.open(link)
-    o = c.read()
     br.select_form(nr=1)
     br.form.find_control(id="username").value = creds['username']
     br.form.find_control(id="password").value = creds['password']
